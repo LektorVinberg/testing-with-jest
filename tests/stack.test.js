@@ -17,3 +17,11 @@ test("peek on stack with two or more elements returns the top element", () => {
   expect(stack.peek()).toBeDefined();
   expect(stack.peek()).toBe(42);
 });
+
+test("pushing multiple elements on to stack and then peeking should have peek method return the last element pushed", () => {
+  //rensar först stacken för att ha en "clean slate..."
+  stack.clear();
+  stack.push("first");
+  stack.push("second");
+  expect(stack.peek()).toBe("second");
+});

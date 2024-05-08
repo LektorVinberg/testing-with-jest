@@ -33,3 +33,19 @@ describe('Clicking "Pusha till stacken"', () => {
     await alert.accept();
   });
 });
+
+describe('Clicking "Vad finns överst på stacken?"', () => {
+  it('should display the top element of the stack in the "top_of_stack"-span', async () => {
+    const push = await driver.findElement(By.id("push"));
+    await push.click();
+    const alert = await driver.switchTo().alert();
+    await alert.sendKeys("Fler Bananer");
+    await alert.accept();
+
+    const peek = await driver.findElement(By.id("peek"));
+    await peek.click();
+
+    const stackText = await driver.findElement(By.id("top_of_stack")).getText();
+    expect(stackText).toEqual("Fler Bananer");
+  });
+});

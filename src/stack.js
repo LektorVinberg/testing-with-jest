@@ -3,7 +3,8 @@ const _ = require("underscore");
 let stack = [];
 
 exports.push = function (x) {
-  stack.push(x);
+  //stack.push(x);
+  stack.unshift(x); //här blir det knasigt eftersom vi inte lägger saker "längst upp" i stacken utan "längst ner" istället...
 };
 
 exports.pop = function () {
@@ -12,4 +13,8 @@ exports.pop = function () {
 
 exports.peek = function () {
   return _.last(stack);
+};
+
+exports.clear = function () {
+  stack = [];
 };
