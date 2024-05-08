@@ -1,5 +1,7 @@
 # testing-with-jest
 A jest + npm lab session
 
+- this is some new data...
+
 ## More information (in Swedish)
 See [this page](http://mah-dv.github.io/courses/da344a-da355a/exercises/ex11.html)
